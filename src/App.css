@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  overflow: hidden;
+  background: linear-gradient(90.48deg, #417B94 3.82%, rgba(74, 163, 199, 0.71) 95.66%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.overlap {
+  width: 549.64px;
+  height: 566.06px;
+  left: -95.26px;
+  top: -94.16px;
+  color: rgba(254, 254, 254, 0.07);
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.overlap2 {
+  width: 1557.39px;
+  height: 566.06px;
+  left: 363.67px;
+  top: -163.73px;
+  color: rgba(254, 254, 254, 0.07);
+  overflow-x: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.overlap3 {
+  width: 2494.43px;
+height: 699.18px;
+left: -219.95px;
+top: 295.26px;
+color: rgba(254, 254, 254, 0.07);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero {
+  z-index: 2;
+}
+
+.hero-text {
+  width: 465px;
+}
+
+.hero-text h1 {
+  font-family: 'Open Sans';
+  font-size: 192.867px;
+  line-height: 263px;
+  color: #FFFFFF;
+  text-shadow: 0px 4.15047px 21.8978px rgba(0, 0, 0, 0.25);
+}
+
+.hero-text p {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16.708px;
+  line-height: 27px;
+}
+
+.musichead {
+  /* width: 382.48px; */
+  height: 626.64px;
+}
+
+.musicfooter {
+  width: 829.93px;
+  height: 97.15px;
+  background: linear-gradient(89.93deg, rgba(140, 102, 165, 0.2) 1.1%, rgba(179, 178, 193, 0.2) 90.1%);
+  mix-blend-mode: normal;
+  backdrop-filter: blur(62.4857px);
+}
+
+.playingnow {
+  font-family: 'Open Sans';
+  font-size: 14.0657px;
+  line-height: 25px;
+}
+
+.songname {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15.5292px;
+  line-height: 28px;
+  letter-spacing: 0.14em;
+}
+
+.artist {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15.708px;
+  line-height: 27px;
+}
+
+.identify {
+  /* width: 99.93px; */
+  width: auto;
+  height: 97.15px;
+  /* background: white; */
 }
