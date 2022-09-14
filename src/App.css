@@ -45,9 +45,13 @@ color: rgba(254, 254, 254, 0.07);
 
 .hero-text h1 {
   font-family: 'Open Sans';
-  font-size: 192.867px;
-  line-height: 263px;
+  font-size: 172.867px;
+  /* line-height: 263px; */
   color: #FFFFFF;
+  text-shadow: 0px 4.15047px 21.8978px rgba(0, 0, 0, 0.25);
+}
+
+.hero-text {
   text-shadow: 0px 4.15047px 21.8978px rgba(0, 0, 0, 0.25);
 }
 
@@ -100,4 +104,41 @@ color: rgba(254, 254, 254, 0.07);
   width: auto;
   height: 97.15px;
   /* background: white; */
+}
+
+
+
+/* lyrics extra styling */
+.lyrics {  
+  background: #213F7B;
+  height: 100vh;
+}
+
+.lines img {
+  position: absolute;
+  width: 1171px;
+  height: 100vh;
+  left: 140px;
+  top: 0px;
+  z-index: 0;
+}
+
+.lyricsContent {
+  position: relative;
+  z-index: 1;
+}
+
+.lyricsContent img {
+  /* width: 674px; */
+  height: 90vh;
+}
+
+.spiral {
+  position: absolute;
+  /* width: 1440px;
+  height: 900px; */
+  /* left: 0px;
+  top: 0px; */
+  right: 0px;
+  bottom: 0px;
 }

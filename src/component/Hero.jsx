@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from 'react';
 const Hero = () => {
   return (
     <section className='hero-text'>
@@ -13,6 +12,8 @@ const Hero = () => {
           future of music with every play, like, 
           repost and comment 
         </p>
+
+        
     </section>
   )
 }
