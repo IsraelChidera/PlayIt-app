@@ -9,6 +9,11 @@
   background: linear-gradient(90.48deg, #417B94 3.82%, rgba(74, 163, 199, 0.71) 95.66%);
 }
 
+.loader {
+  background: linear-gradient(90.48deg, #417B94 3.82%, rgba(74, 163, 199, 0.71) 95.66%);
+  height: 100vh;
+}
+
 .overlap {
   width: 549.64px;
   height: 566.06px;
@@ -130,7 +135,7 @@ color: rgba(254, 254, 254, 0.07);
 
 .lyricsContent img {
   /* width: 674px; */
-  height: 90vh;
+  /* height: 90vh; */
 }
 
 .spiral {
@@ -141,4 +146,41 @@ color: rgba(254, 254, 254, 0.07);
   top: 0px; */
   right: 0px;
   bottom: 0px;
+}
+
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+  pointer-event:none;
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #efb0bb;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;	
+}
+
+.modal {
+  z-index: 10;
 }

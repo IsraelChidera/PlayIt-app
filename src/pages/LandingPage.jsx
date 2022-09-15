@@ -7,10 +7,7 @@ import overlap2 from '../assets/overlap3.png';
 import overlap3 from '../assets/overlap1.png';
 import searchbtn from '../assets/searchbtn.png';
 import logo from '../assets/logo.png';
-import Login from './Login';
-import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
-import MusicContext from '../MusicContext';
 
 
 const LandingPage = () => {
@@ -66,7 +63,7 @@ const LandingPage = () => {
           <img 
             src={searchbtn} 
             alt="search icon" 
-            className=' cursor-pointer h-6 w-6 '
+            className='animate-bounce cursor-pointer h-6 w-6 '
             
           />          
         </div>
@@ -81,6 +78,8 @@ const LandingPage = () => {
       <div className='absolute overlap3'>
         <img src={overlap3} alt="overlaping words"/>
       </div>
+
+
     </section>
   
   )
