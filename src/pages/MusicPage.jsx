@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import HeroSearch from '../component/HeroSearch';
 import Hero from '../component/Hero';
 import MusicFooter from '../component/MusicFooter';
@@ -19,7 +19,26 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [openInput, setOpenInput] = useState(false);  
   
-               
+  const fetchData = () => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'text/plain',
+        'X-RapidAPI-Key': 'af8c59034cmshb77651f0711720ap1f5705jsndedce9489dc7',
+        'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+      },
+      body: '"Generate one on your own for testing and send the body with the content-type as text/plain"'
+    };
+    
+    fetch('https://shazam.p.rapidapi.com/songs/v2/detect?timezone=America%2FChicago&locale=en-US', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+  }
+
+  useEffect(()=>{
+    fetchData();
+  }, []) 
   return (
     
     <section className="app h-screen relative">

@@ -1,5 +1,5 @@
 import './App.css';
-import LandingPage from './pages/LandingPage';
+import MusicPage from './pages/MusicPage';
 import { Route, Routes } from 'react-router-dom';
 import LyricsPage from './pages/LyricsPage';
 import React, {useState, useEffect} from 'react';
@@ -10,8 +10,7 @@ function App() {
   
   const [loader, setLoader] = useState(false);
   useEffect(()=>{
-    setTimeout(() => {
-      console.log("Delayed for 3 second.");
+    setTimeout(() => {      
       setLoader(true);
     }, 5000)
   }, [])
@@ -34,8 +33,8 @@ function App() {
       :
       (
       <Routes>
-        <Route exact path="/" element={< LandingPage />}/>
-        <Route exact path="/lyrics" element={< LyricsPage />}/>
+        <Route exact path="/music" element={< MusicPage />}/>
+        <Route exact path="/" element={< LyricsPage />}/>
       </Routes>
     
       )

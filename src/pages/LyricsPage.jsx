@@ -13,7 +13,7 @@ const LyricsPage = () => {
   const [lyrics, setLyrics] = useState([]);
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState(false);
-
+  const [lyric, setLyric] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
     const options = {
@@ -26,31 +26,51 @@ const LyricsPage = () => {
     setLoading(true);   
     setModal(false);
     console.log(lyrics);
+    
     fetch(`https://lyrics-plus.p.rapidapi.com/lyrics/${song}/${artist}`, options)
       .then(response => response.json())
       .then(response => {
-        console.log(response); 
+        console.log(response);         
         setLyrics(response); 
+        // setLyric(response)
+        {/* {
+          lyrics?.lyrics.split("\n").map((lyric)=>(
+            <p className="text-2xl w-3/4">
+              {lyric}
+            </p>
+          ))
+          } */}
+
         setLoading(false);
         setModal(true);
-        console.log(lyrics);
+        console.log(lyrics);       
       })
       .catch(err => {
         console.error(err);        
       });
+  
+    
   }
-
+  const str = 'Hello, it\'s me\nI was wondering if after all these years you\'d like to meet\nTo go over everything\nThey say that time\'s supposed to heal ya, but I ain\'t done much healing\n\nHello, can';
   return (
-    <section className="lyrics text-white relative">
+    <section className="lyrics text-white relative">      
+      {/* {       
+       str.split("\n").map((lyric)=>(
+        <p className="text-2xl w-3/4">
+          {lyric}
+        </p>
+      ))              
+      } */}
 
       {
         modal && lyrics.name?
         (
           <section 
-            className="modal absolute top-60 right-o z-100 bg-white
-              w-full text-black h-full rounded-2xl p-4"
+            className="transition ease-in-out delay-150 modal absolute 
+            top-60 right-o z-100 bg-white
+              w-full text-black h-full rounded-3xl p-6"
           >
-            <div className="flex justify-end cursor-pointer">
+            <div className="flex animate-bounce justify-end cursor-pointer">
               <img 
                 src={cancel}
                 alt="cancel icon"
@@ -60,27 +80,23 @@ const LyricsPage = () => {
 
             <div className="">
               <div>
-
-                {/* {
-                  lyrics?.map((lyric)=>(
-                    <div key={lyric.name}>
-                      <h1 className="text-3xl mb-4">
-                        Song Name: {lyric.name}
-                      </h1>
-
-                      <p className="text-sm">Song lyrics</p>
-
-                    </div>
-                  ))
-                } */}
                 {
                   (
                     <>
-                      <h1 className="text-4xl font-bold mb-4">
-                        Song Name: {lyrics?.name}
+                      <h1 className="text-6xl font-bold mt-6 mb-4">
+                        {lyrics?.name}
                       </h1>
-                      <p className="text-sm">{lyrics?.lyrics}</p>
-                      <p className="text-sm">{lyrics?.message}</p>
+
+                      <p className="text-2xl w-3/4">                        
+                        {
+                          lyrics.lyrics && lyrics.lyrics.split("\n").map((lyric)=>(
+                            <p className="text-2xl w-3/4">
+                              {lyric}
+                            </p>
+                          )) 
+                        }
+                        {lyrics?.lyrics}
+                      </p>                                          
                     </>
                   )
                 }
@@ -92,6 +108,8 @@ const LyricsPage = () => {
         :
         " "
       }
+
+      
       
 
       <div className="lines z-10">
@@ -111,7 +129,7 @@ const LyricsPage = () => {
         </NavLink>
       </div>
 
-      <form className="z-40 text-black flex justify-beween absolute right-8 top-6 space-x-4">
+      <form className="text-sm z-40 text-black flex justify-beween absolute right-8 top-6 space-x-4">
         <div className="input-container">            
           <input 
             type="text" 
@@ -158,17 +176,17 @@ const LyricsPage = () => {
       >
         <div className="grid grid-cols-2 gap-4">
 
-          <div className="flex justify-center items-center h-full">
+          <div className="flex lyricshero justify-center items-center h-full">
             <img
               src={lyricshero}
               alt="a young dark lady looking elsewhere"          
             />  
           </div>
           
-          <div className="flex justify-center items-center ">        
+          <div className="flex justify-center lyricscontent items-center ">        
             <h1 className="text-8xl font-bold">
-              <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
-                <span class="relative text-white">LYRICS</span>
+              <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
+                <span className="relative text-white">LYRICS</span>
               </span>
                 GENERATOR
             </h1>
