@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background: hsl(220, 58%, 31%);
+}
+
 .app {
   overflow: hidden;
   background: linear-gradient(90.48deg, #417B94 3.82%, rgba(74, 163, 199, 0.71) 95.66%);
@@ -38,10 +42,6 @@ height: 699.18px;
 left: -219.95px;
 top: 295.26px;
 color: rgba(254, 254, 254, 0.07);
-}
-
-.hero {
-  z-index: 2;
 }
 
 .hero-text {
@@ -115,17 +115,36 @@ color: rgba(254, 254, 254, 0.07);
 
 /* lyrics extra styling */
 .lyrics {  
-  background: #213F7B;
-  height: 100vh;
+  background: hsl(220, 58%, 31%);
+  /* height: 100vh; */
 }
 
 .lines img {
   position: absolute;
   width: 1171px;
   height: 100vh;
-  left: 140px;
+  left: 0px;
   top: 0px;
-  z-index: 0;
+  /* z-index: 0; */
+}
+
+@media only screen and (max-width: 768px) {
+  .lines img {    
+    left: 0px;
+  }
+
+  .lyricsContent img {
+    padding: 0rem;
+    width: 400px;
+    height: auto;
+  }
+  
+}
+
+@media only screen and (max-width: 345px) {
+  .lyricscontent h1 {
+    font-size: 2rem;
+  }
 }
 
 .lyricsContent {
@@ -133,17 +152,8 @@ color: rgba(254, 254, 254, 0.07);
   z-index: 1;
 }
 
-.lyricsContent img {
-  /* width: 674px; */
-  /* height: 90vh; */
-}
-
 .spiral {
   position: absolute;
-  /* width: 1440px;
-  height: 900px; */
-  /* left: 0px;
-  top: 0px; */
   right: 0px;
   bottom: 0px;
 }
@@ -218,4 +228,8 @@ color: rgba(254, 254, 254, 0.07);
 
 .lyricscontent {
   animation: 4s ease-out 0s 1 slideInRight;
+}
+
+.lyrics-nav {
+  /* z-index: 2; */
 }
